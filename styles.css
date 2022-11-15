@@ -45,11 +45,108 @@ body {
 .book-read > input {
     cursor: pointer;
   }
-.container {
+.container-content {
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 30vh; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: auto;
+    padding: 5px 5px 5px 20px;
+    border: 1px solid #888;
+    width: 350px;
+    border-radius: 10px;
+  }
+
+  .close {
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: auto;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-title {
+    font-size: xx-large;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .modal-form {
+    margin-right: auto;
+    padding-top: 5px;
+  }
+  .modal-form-input {
+    border: 0;
+    margin-left: auto;
+    margin-right: 20%;
+    background-color: rgba(44, 66, 164, 0.198);
+    padding: 0.5rem 1.5rem;
+    outline-color: var(--blue-1);
+    border-radius: 5px;
+  }
+  .modal-input-field {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+  .container {
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: -8px;
+    left: 35px;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(44, 66, 164, 0.198);
+  }
+
 .header {
     flex: 0.5;
     background-color:rgb(255, 255, 255);
@@ -140,3 +237,27 @@ body {
     background-color: white;
     padding: 0.2rem 0.4rem 0.2rem 0.4rem;
 }
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .modal-read {
+    padding-top: 10px;
+  }
+  .submit-modal-form {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
